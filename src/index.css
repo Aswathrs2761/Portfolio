@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Portfolio color scheme */
+    --navbar: 216 37% 17%; /* #1D283A */
+    --section: 218 35% 26%; /* #2B3B5C */
+    --accent: 350 48% 36%; /* #8B2E3F */
+    --accent-light: 350 48% 46%;
+    --accent-glow: 350 48% 56%;
+    
+    --background: 222 20% 12%;
+    --foreground: 210 40% 98%;
+
+    --card: 218 35% 26%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 218 35% 26%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 350 48% 36%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 218 35% 26%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 218 20% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 350 48% 36%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 218 25% 30%;
+    --input: 218 25% 30%;
+    --ring: 350 48% 46%;
+
+    --radius: 0.75rem;
+  }
+}
+
+/* Custom animations and utilities */
+@layer utilities {
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--accent-glow) / 0.5);
+  }
+  
+  .glow-box {
+    box-shadow: 0 0 40px hsl(var(--accent) / 0.3);
+  }
+  
+  .skill-card {
+    @apply bg-card hover:bg-card/80 p-6 rounded-xl border border-border transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20;
+  }
+  
+  .project-card {
+    @apply bg-card rounded-2xl overflow-hidden border border-border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/20;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -1,0 +1,108 @@
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { User } from 'lucide-react';
+
+const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="about" className="py-20 bg-section" ref={ref}>
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            About <span className="text-accent">Me</span>
+          </h2>
+        </motion.div>
+
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="flex justify-center"
+            >
+              <div className="relative">
+                <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center border-2 border-accent/30 glow-box">
+                  <User className="text-accent" size={120} strokeWidth={1.5} />
+                </div>
+                <motion.div
+                  animate={{
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute -top-4 -right-4 w-20 h-20 bg-accent/20 rounded-full blur-xl"
+                />
+                <motion.div
+                  animate={{
+                    scale: [1.1, 1, 1.1],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <div className="prose prose-lg prose-invert">
+                <p className="text-foreground/90 text-lg leading-relaxed">
+                  I enjoy creating <span className="text-accent font-semibold">clean user interfaces</span>, 
+                  <span className="text-accent font-semibold"> reusable components</span>, and 
+                  <span className="text-accent font-semibold"> reliable automation frameworks</span>. 
+                  I focus on writing maintainable and production-ready code.
+                </p>
+                
+                <p className="text-foreground/90 text-lg leading-relaxed">
+                  Currently learning <span className="text-accent font-semibold">advanced React patterns</span> and 
+                  improving my <span className="text-accent font-semibold">automation strategy</span>.
+                </p>
+                
+                <p className="text-foreground/90 text-lg leading-relaxed">
+                  Actively looking for a role where I can contribute, learn fast, and grow as a developer.
+                </p>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="flex flex-wrap gap-4 pt-6"
+              >
+                <div className="px-6 py-3 bg-accent/10 border border-accent/30 rounded-lg">
+                  <p className="text-accent font-semibold text-sm">Location</p>
+                  <p className="text-foreground">Available for Remote</p>
+                </div>
+                <div className="px-6 py-3 bg-accent/10 border border-accent/30 rounded-lg">
+                  <p className="text-accent font-semibold text-sm">Status</p>
+                  <p className="text-foreground">Open to Opportunities</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
