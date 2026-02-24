@@ -11,8 +11,8 @@ const Education = () => {
     {
       degree: "Bachelor of Commerce",
       college: "St. Joseph's College of Arts and Science",
-      year: "2019 - 2022",
-      description: "Studied commerce with projects and coursework relevant to business systems and basic programming concepts."
+      year: "2019 - 2022"
+      // description: "Studied commerce with projects and coursework relevant to business systems and basic programming concepts."
     }
   ];
 
@@ -66,7 +66,7 @@ const Education = () => {
               </div>
               
               <p className="text-accent font-semibold mb-3">{edu.college}</p>
-              <p className="text-foreground/80 leading-relaxed">{edu.description}</p>
+              {/* <p className="text-foreground/80 leading-relaxed">{edu.description}</p> */}
             </motion.div>
           ))}
 
