@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Mail, Linkedin, Github, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -15,37 +16,66 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Error",
-        description: "Please fill in all fields",
-        variant: "destructive"
-      });
-      return;
-    }
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid email address",
-        variant: "destructive"
-      });
-      return;
-    }
+  // validation
+  if (!formData.name || !formData.email || !formData.message) {
+    toast({
+      title: "Error",
+      description: "Please fill in all fields",
+      variant: "destructive"
+    });
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    toast({
+      title: "Error",
+      description: "Please enter a valid email address",
+      variant: "destructive"
+    });
+    return;
+  }
+
+  try {
+    await emailjs.send(
+      "service_vaq0aqe",
+      "template_h80tkms",
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      "qmNJABE2sPXohgJZO"
+    );
 
     toast({
       title: "Message Sent!",
       description: "Thank you for reaching out. I'll get back to you soon.",
     });
-    
-    setFormData({ name: '', email: '', message: '' });
-  };
+
+    setFormData({ name: "", email: "", message: "" });
+
+  } catch (error: any) {
+    console.error('EmailJS send error:', error);
+    const description = error?.statusText || error?.text || error?.message || 'Failed to send message';
+    toast({
+      title: "Error",
+      description,
+      variant: "destructive"
+    });
+  }
+};
+
+  useEffect(() => {
+    try {
+      emailjs.init("qmNJABE2sPXohgJZO");
+    } catch (err) {
+      console.error('EmailJS init error:', err);
+    }
+  }, []);
 
   const contactInfo = {
     phone: "+91 9360295228",
