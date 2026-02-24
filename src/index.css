@@ -2,48 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Portfolio color scheme */
-    --navbar: 216 37% 17%; /* #1D283A */
-    --section: 218 35% 26%; /* #2B3B5C */
-    --accent: 350 48% 36%; /* #8B2E3F */
-    --accent-light: 350 48% 46%;
-    --accent-glow: 350 48% 56%;
-    
-    --background: 222 20% 12%;
-    --foreground: 210 40% 98%;
+    /* Black + Blue theme */
+    --navbar: 220 6% 4%;
+    --section: 220 6% 6%;
+    --background: 220 6% 3%; /* very dark near-black */
+    --foreground: 210 16% 96%;
 
-    --card: 218 35% 26%;
-    --card-foreground: 210 40% 98%;
+    /* Primary blue accent (use HSL) */
+    --accent: 203 95% 50%; /* bright cyan-blue */
+    --accent-light: 203 90% 62%;
+    --accent-glow: 203 95% 64%;
 
-    --popover: 218 35% 26%;
-    --popover-foreground: 210 40% 98%;
+    --primary: 203 95% 50%;
+    --primary-foreground: 210 16% 96%;
 
-    --primary: 350 48% 36%;
-    --primary-foreground: 210 40% 98%;
+    --card: 220 8% 6%;
+    --card-foreground: 210 16% 96%;
 
-    --secondary: 218 35% 26%;
-    --secondary-foreground: 210 40% 98%;
+    --popover: 220 8% 6%;
+    --popover-foreground: 210 16% 96%;
 
-    --muted: 218 20% 20%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --secondary: 220 8% 8%;
+    --secondary-foreground: 210 20% 84%;
 
-    --accent: 350 48% 36%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 220 8% 10%;
+    --muted-foreground: 220 8% 50%;
 
     --destructive: 0 62.8% 50.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 210 16% 96%;
 
-    --border: 218 25% 30%;
-    --input: 218 25% 30%;
-    --ring: 350 48% 46%;
+    --border: 220 8% 10%;
+    --input: 220 8% 10%;
+    --ring: 203 90% 62%;
 
     --radius: 0.75rem;
+  }
+}
+
+/* Global themed background: subtle radial glows left and right */
+@layer base {
+  body {
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(700px 480px at 10% 40%, hsl(var(--accent) / 0.06), transparent 22%),
+          radial-gradient(520px 420px at 95% 60%, hsl(var(--accent) / 0.04), transparent 22%),
+          radial-gradient(340px 340px at 80% 20%, hsl(var(--accent) / 0.02), transparent 20%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: hsl(var(--foreground));
+
+  }
+
+  .theme-accent {
+    color: transparent;
+    background-image: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    color: hsl(var(--primary-foreground));
+    padding: 0.65rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    box-shadow: 0 10px 30px hsl(var(--accent) / 0.14);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px hsl(var(--accent) / 0.18); }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid hsl(var(--accent));
+    color: hsl(var(--accent-light));
+    padding: 0.65rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: background .18s ease, color .18s ease, transform .18s ease;
+  }
+
+  .btn-outline:hover { background: hsl(var(--accent) / 0.06); color: hsl(var(--primary-foreground)); transform: translateY(-2px);}  
+
+  .glass-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid hsl(var(--accent) / 0.06);
+    backdrop-filter: blur(6px);
   }
 }
 
@@ -73,5 +124,6 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 }

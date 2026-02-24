@@ -8,11 +8,11 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const handleScroll = () => {
+  const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
-      // Update active section based on scroll position
-      const sections = ['home', 'skills', 'projects', 'about', 'experience', 'education', 'contact'];
+
+      // Update active section based on scroll position (experience removed)
+      const sections = ['home', 'skills', 'projects', 'about', 'education', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -47,8 +47,7 @@ const Navbar = () => {
     { id: 'home', label: 'Home' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
+    { id: 'about', label: 'Profile' },
     { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -67,10 +66,10 @@ const Navbar = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-foreground cursor-pointer"
+            className="text-3xl font-bold text-foreground cursor-pointer"
             onClick={() => scrollToSection('home')}
           >
-            <span className="text-accent">H</span>ari
+            <span className="text-accent">port</span>folio
           </motion.div>
 
           {/* Desktop Navigation */}

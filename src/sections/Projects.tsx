@@ -9,28 +9,28 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Swiggy Clone UI",
-      description: "Built a pixel-perfect, responsive UI similar to Swiggy. Reusable components, responsive grid, clean layout. Demonstrates strong frontend and component design skills.",
-      tech: ["React", "Tailwind CSS", "Responsive Design"],
-      github: "https://github.com",
-      live: "https://example.com",
-      image: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?w=800&h=600&fit=crop"
+      title: "Online Event Management Platform",
+      description: "Developed a full-stack web application using React.js, Node.js, Express.js and MongoDB for event organizers and attendees. Implemented role-based access control, secure authentication using JWT, and integrated Stripe payment gateway for ticket booking. Cloudinary used for image uploads and pagination for event listings.",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Stripe","cloudinary","Jwt"],
+      github: "https://github.com/Aswathrs2761/Event_Hub_backend",
+      live: "https://eventhub-topaz.vercel.app/",
+      image: "https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=800&h=600&fit=crop"
     },
     {
-      title: "E-Commerce Automation Framework",
-      description: "Automated end-to-end flow: login, search, cart, checkout. Implemented Page Object Model for clean structure. Integrated pytest HTML reports for test results.",
-      tech: ["Python", "Selenium", "pytest", "POM"],
-      github: "https://github.com",
-      live: "#",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop"
+      title: "Kanban Board - React.js",
+      description: "Built a responsive Kanban board with draggable tasks using React. Supports To Do, In Progress and Done columns, drag-and-drop, task persistence via localStorage and a compact modal for task details.",
+      tech: ["React", "Tailwind", "Drag & Drop"],
+      github: "https://github.com/Aswathrs2761/kanbanboard",
+      live: "https://kanbansboard.vercel.app/",
+      image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=600&fit=crop"
     },
     {
-      title: "Portfolio Website",
-      description: "Modern UI with smooth animations and elegant layout. Shows React skills, UI design, and component architecture. Built with modern tools and best practices.",
-      tech: ["React", "Tailwind", "Framer Motion", "TypeScript"],
-      github: "https://github.com",
-      live: "#",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+      title: "Notes App - React.js",
+      description: "A notes management app with create, edit, delete, pin, archive and trash features, search and tag-based filtering, routing with React Router and data persistence using localStorage.",
+      tech: ["React", "Tailwind", "localStorage"],
+      github: "https://github.com/Aswathrs2761/Guvi-notes-task/tree/main/guvi_task",
+      live: "https://hilarious-malasada-24dc60.netlify.app/",
+      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=600&fit=crop"
     }
   ];
 
@@ -66,7 +66,7 @@ const Projects = () => {
             Featured <span className="text-accent">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Real-world applications showcasing my development and testing expertise
+            Real-world applications showcasing my development
           </p>
         </motion.div>
 

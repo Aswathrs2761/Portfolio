@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -13,7 +13,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#05080a]">
       {/* Animated background shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -49,56 +49,80 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 glow-text"
+            <motion.p
+              className="text-lg text-teal-400 mb-3 tracking-wide"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
+              <span className='text-4xl'
+              >Hi,</span> my name is
+            </motion.p>
+
+            <motion.h1
+              className="text-5xl md:text-7xl lg:text-[106px] font-extrabold mb-4 text-white drop-shadow-[0_6px_24px_rgba(0,0,0,0.6)]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.9, delay: 0.25 }}
             >
-              Hi, I'm <span className="text-accent">Aswath</span>
+              Aswath R S
             </motion.h1>
 
             <motion.h2
-              className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-6 text-foreground/90"
+              className="text-3xl md:text-5xl font-extrabold mb-8 bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-600 text-transparent bg-clip-text"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.9, delay: 0.4 }}
             >
-              React Developer & Automation Testing Engineer
+              MERN Stack Developer
             </motion.h2>
 
             <motion.p
-              className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12"
+              className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              I build clean, scalable React applications and reliable automation frameworks.
+              I build full-stack web applications with modern technologies. Passionate about creating clean, efficient, and scalable solutions.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             >
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={scrollToProjects}
-                className="px-8 py-4 bg-accent hover:bg-accent-light text-accent-foreground rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/50"
+                className="btn-primary"
               >
-                View Projects
+                View My Work
               </motion.button>
-              
+
               <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
                 href="#contact"
-                className="px-8 py-4 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground rounded-xl text-lg font-semibold transition-all duration-300"
+                className="btn-outline"
               >
                 Get In Touch
               </motion.a>
+            </motion.div>
+
+            <motion.div className="mt-8 flex flex-col items-center gap-4">
+              <div className="flex items-center gap-6 text-gray-400">
+                <a href="https://github.com/Aswathrs2761" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+                  <Github size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/aswath-r-s-469a813b0/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+                  <Linkedin size={20} />
+                </a>
+                <a href="mailto:aswathrs2001@gmail.com" className="hover:text-white transition-colors">
+                  <Mail size={20} />
+                </a>
+              </div>
             </motion.div>
           </motion.div>
 

@@ -47,24 +47,30 @@ const Contact = () => {
     setFormData({ name: '', email: '', message: '' });
   };
 
+  const contactInfo = {
+    phone: "+91 9360295228",
+    email: "aswathrs2001@gmail.com",
+    location: "Chennai, Tamil Nadu, India"
+  };
+
   const socialLinks = [
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:your.email@example.com",
+      href: `mailto:${contactInfo.email}`,
       color: "hover:text-blue-400"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourprofile",
+      href: "https://www.linkedin.com/in/aswath-r-s-469a813b0/",
       color: "hover:text-blue-500"
     },
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/yourprofile",
-      color: "hover:text-purple-400"
+      href: "https://github.com/Aswathrs2761",
+      color: "hover:text-blue-400"
     }
   ];
 
@@ -94,11 +100,10 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Let's Connect</h3>
-              <p className="text-foreground/80 leading-relaxed mb-8">
-                Whether you have a question, want to discuss a project, or just want to say hi, 
-                feel free to reach out. I'll try my best to get back to you!
-              </p>
+              <h3 className="text-2xl font-bold mb-6 text-foreground">Contact</h3>
+              <p className="text-foreground/80 leading-relaxed mb-4">Phone: <span className="font-semibold text-foreground">{contactInfo.phone}</span></p>
+              <p className="text-foreground/80 leading-relaxed mb-4">Email: <a className="text-accent font-semibold" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a></p>
+              <p className="text-foreground/80 leading-relaxed">Location: {contactInfo.location}</p>
             </div>
 
             <div className="space-y-4">

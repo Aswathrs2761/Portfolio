@@ -66,19 +66,11 @@ const About = () => {
             >
               <div className="prose prose-lg prose-invert">
                 <p className="text-foreground/90 text-lg leading-relaxed">
-                  I enjoy creating <span className="text-accent font-semibold">clean user interfaces</span>, 
-                  <span className="text-accent font-semibold"> reusable components</span>, and 
-                  <span className="text-accent font-semibold"> reliable automation frameworks</span>. 
-                  I focus on writing maintainable and production-ready code.
+                  Entry-level MERN Stack Developer trained at GUVI (IIT Madras Incubated Company) with hands-on experience in building full-stack web applications using MongoDB, Express.js, React.js and Node.js. Experienced in RESTful APIs, JWT authentication, role-based access control, CRUD operations, Stripe payment integration and Cloudinary.
                 </p>
-                
+
                 <p className="text-foreground/90 text-lg leading-relaxed">
-                  Currently learning <span className="text-accent font-semibold">advanced React patterns</span> and 
-                  improving my <span className="text-accent font-semibold">automation strategy</span>.
-                </p>
-                
-                <p className="text-foreground/90 text-lg leading-relaxed">
-                  Actively looking for a role where I can contribute, learn fast, and grow as a developer.
+                  Strong problem-solving and teamwork skills. Seeking a full-time MERN Developer role in Chennai to contribute to meaningful projects and continue growing as an engineer.
                 </p>
               </div>
 

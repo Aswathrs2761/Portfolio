@@ -9,16 +9,22 @@ const Education = () => {
 
   const education = [
     {
-      degree: "Bachelor of Technology in Computer Science",
-      college: "Your University Name",
-      year: "2020 - 2024",
-      description: "Focused on software development, algorithms, and web technologies. Completed projects in React, Python, and automation testing."
-    },
+      degree: "Bachelor of Commerce",
+      college: "St. Joseph's College of Arts and Science",
+      year: "2019 - 2022",
+      description: "Studied commerce with projects and coursework relevant to business systems and basic programming concepts."
+    }
+  ];
+
+  const courses = [
     {
-      degree: "Higher Secondary Education",
-      college: "Your School Name",
-      year: "2018 - 2020",
-      description: "Completed with focus on Mathematics and Computer Science fundamentals."
+      title: "MERN Stack Developer Trainee",
+      org: "GUVI (IIT Madras Incubated Company)",
+      year: "2025 - 2026",
+      bullets: [
+        "Completed hands-on training in full-stack development using MERN stack",
+        "Built real-world projects using REST APIs, authentication and database design"
+      ]
     }
   ];
 
@@ -39,14 +45,14 @@ const Education = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="max-w-4xl mx-auto space-y-6">
           {education.map((edu, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.01 }}
               className="bg-card p-8 rounded-xl border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/20"
             >
               <div className="flex items-center gap-3 mb-4">
@@ -61,6 +67,15 @@ const Education = () => {
               
               <p className="text-accent font-semibold mb-3">{edu.college}</p>
               <p className="text-foreground/80 leading-relaxed">{edu.description}</p>
+            </motion.div>
+          ))}
+
+          {courses.map((course, idx) => (
+            <motion.div key={idx} className="bg-card p-6 rounded-xl border border-border">
+              <h3 className="text-lg font-bold text-foreground">{course.title} — <span className="text-muted-foreground text-sm">{course.org} • {course.year}</span></h3>
+              <ul className="list-disc list-inside mt-3 text-foreground/80">
+                {course.bullets.map((b, bi) => (<li key={bi}>{b}</li>))}
+              </ul>
             </motion.div>
           ))}
         </div>

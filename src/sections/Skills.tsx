@@ -9,47 +9,58 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Frontend",
       icon: Code2,
       skills: [
-        "HTML, CSS, JavaScript",
-        "React",
-        "Tailwind CSS",
-        "Component Architecture",
-        "Responsive UI",
-        "State Management (Props, Hooks)"
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React.js",
+        "Tailwind CSS"
       ]
     },
     {
-      title: "Automation / QA",
-      icon: TestTube,
-      skills: [
-        "Python",
-        "Selenium",
-        "pytest",
-        "Page Object Model (POM)",
-        "API Testing",
-        "Test Reporting"
-      ]
-    },
-    {
-      title: "Tools / Essentials",
+      title: "Backend",
       icon: Wrench,
       skills: [
-        "Git & GitHub",
-        "Chrome DevTools",
+        "Node.js",
+        "Express.js"
+      ]
+    },
+    {
+      title: "Database",
+      icon: TestTube,
+      skills: [
+        "MongoDB",
+        "NoSQL"
+      ]
+    },
+    {
+      title: "APIs & Auth",
+      icon: Code2,
+      skills: [
+        "RESTful APIs",
+        "JWT Authentication"
+      ]
+    },
+    {
+      title: "Tools",
+      icon: Wrench,
+      skills: [
+        "Git",
+        "GitHub",
         "Postman",
         "VS Code"
       ]
     },
     {
-      title: "Soft Skills",
+      title: "Payments & Others",
       icon: Users,
       skills: [
-        "Problem solving",
-        "Debugging",
-        "Clean code mindset",
-        "Teamwork"
+        "Stripe API",
+        "Problem Solving",
+        "API Integration",
+        "Team Collaboration",
       ]
     }
   ];
@@ -126,23 +137,7 @@ const Skills = () => {
           })}
         </motion.div>
 
-        {/* Tech Stack Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 flex flex-wrap justify-center gap-3"
-        >
-          {["React", "TypeScript", "Tailwind", "Python", "Selenium", "Git", "Framer Motion", "Vite"].map((tech, index) => (
-            <motion.span
-              key={index}
-              whileHover={{ scale: 1.1 }}
-              className="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium hover:bg-accent/20 transition-all duration-300"
-            >
-              {tech}
-            </motion.span>
-          ))}
-        </motion.div>
+        {/* Skills list only — matching resume content (no extra badges) */}
       </div>
     </section>
   );
