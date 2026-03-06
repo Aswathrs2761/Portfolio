@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Github, ExternalLink } from 'lucide-react';
+import musicimg from "../images/Screenshot 2026-03-06 174652.png"
+import eventhub from "../images/Screenshot 2026-03-06 175707.png"
+import airesume from "../images/Screenshot 2026-03-06 184625.png"
 
 const Projects = () => {
   const ref = useRef(null);
@@ -14,23 +17,23 @@ const Projects = () => {
       tech: ["React", "Node.js", "Express", "MongoDB", "Stripe","cloudinary","Jwt"],
       github: "https://github.com/Aswathrs2761/Event_Hub_backend",
       live: "https://eventhub-topaz.vercel.app/",
-      image: "https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=800&h=600&fit=crop"
+      image: eventhub
     },
     {
-      title: "Kanban Board - React.js",
-      description: "Built a responsive Kanban board with draggable tasks using React. Supports To Do, In Progress and Done columns, drag-and-drop, task persistence via localStorage and a compact modal for task details.",
-      tech: ["React", "Tailwind", "Drag & Drop"],
-      github: "https://github.com/Aswathrs2761/kanbanboard",
-      live: "https://kanbansboard.vercel.app/",
-      image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=600&fit=crop"
+      title: "MusicCom – Music Streaming Web Application",
+      description: "Developed a full-stack music streaming web application using React, Node.js, Express, and MongoDB, enabling users to browse songs, create playlists, like tracks, and stream music through an interactive player with shuffle and repeat features. Implemented JWT authentication, local song uploads, and integrated Howler.js for efficient audio playback and management.",
+      tech: ["React.js","Tailwind CSS","Node.js","Express.js", "MongoDB","Multer","Howler"],
+      github: "https://github.com/Aswathrs2761/Music_player_backend",
+      live: "https://musiccom.vercel.app/",
+      image: musicimg
     },
     {
-      title: "Notes App - React.js",
-      description: "A notes management app with create, edit, delete, pin, archive and trash features, search and tag-based filtering, routing with React Router and data persistence using localStorage.",
-      tech: ["React", "Tailwind", "localStorage"],
-      github: "https://github.com/Aswathrs2761/Guvi-notes-task/tree/main/guvi_task",
-      live: "https://hilarious-malasada-24dc60.netlify.app/",
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=600&fit=crop"
+      title: "AI Resume Analyzer Web Application",
+      description: "Built an AI Resume Analyzer using Node.js, Express.js, and MongoDB that analyzes uploaded PDF/DOCX resumes and provides AI-generated feedback and ATS insights. Implemented file parsing with Mammoth, pdf-parse, OCR using Tesseract.js, and integrated OpenAI API for intelligent resume evaluation.",
+      tech: ["React.js","Tailwind CSS","Node.js","Express.js", "MongoDB","Multer","pdf-poppler", "mammoth", "openai" ],
+      github: "https://github.com/Aswathrs2761/ai_resume_analyzer",
+      live: "https://airesumeanalyzervercel.vercel.app/",
+      image: airesume
     }
   ];
 

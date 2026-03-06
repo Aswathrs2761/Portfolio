@@ -14,9 +14,10 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <About />
         <Skills />
         <Projects />
-        <About />
+        
         {/* Experience removed per resume — content not in provided image */}
         <Education />
         <Contact />
