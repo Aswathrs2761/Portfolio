@@ -50,17 +50,17 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.p
-              className="text-lg text-teal-400 mb-3 tracking-wide"
+              className="text-3xl text-teal-400 mb-3 font-bold tracking-wide"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
             >
-              <span className='text-4xl'
-              >Hi,</span> my name is
+              <span className='text-5xl'
+              >Hi,</span> I am 
             </motion.p>
 
             <motion.h1
-              className="text-5xl md:text-7xl lg:text-[106px] font-extrabold mb-4 text-white drop-shadow-[0_6px_24px_rgba(0,0,0,0.6)]"
+              className="text-3xl md:text-7xl lg:text-[106px] font-extrabold mb-4 text-white drop-shadow-[0_6px_24px_rgba(0,0,0,0.6)]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.25 }}
