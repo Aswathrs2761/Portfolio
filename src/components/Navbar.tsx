@@ -127,8 +127,8 @@ const Navbar = () => {
               </button>
             ))}
             <a
-              href="/Aswath_Mern_developer.pdf"
-              download = "Resume_Aswath_Mern_developer.pdf"
+              href="/Aswath_Mern_developer_resume.pdf"
+              download = "Resume_Aswath_Mern_developer_resume.pdf"
               className="block w-full text-center mt-4 px-6 py-3 bg-accent hover:bg-accent-light text-accent-foreground rounded-lg transition-all duration-300"
             >
               Download Resume
