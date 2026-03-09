@@ -88,7 +88,7 @@ const Navbar = () => {
               </button>
             ))}
             <a
-              href="/aswath-resume.pdf"
+              href="/aswath-resume-mern.pdf"
               download = "/aswath-resume.pdf"
               className="ml-4 px-6 py-2 bg-accent hover:bg-accent-light text-accent-foreground rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/30"
             >
