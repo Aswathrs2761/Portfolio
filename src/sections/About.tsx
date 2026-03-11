@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { User } from 'lucide-react';
+// import { User } from 'lucide-react';
 
 const About = () => {
   const ref = useRef(null);
@@ -22,41 +22,7 @@ const About = () => {
         </motion.div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="flex justify-center"
-            >
-              <div className="relative">
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center border-2 border-accent/30 glow-box">
-                  <User className="text-accent" size={120} strokeWidth={1.5} />
-                </div>
-                <motion.div
-                  animate={{
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute -top-4 -right-4 w-20 h-20 bg-accent/20 rounded-full blur-xl"
-                />
-                <motion.div
-                  animate={{
-                    scale: [1.1, 1, 1.1],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"
-                />
-              </div>
-            </motion.div>
+          <div className="gap-12 items-center">
 
             <motion.div
               initial={{ opacity: 0, x: 50 }}
