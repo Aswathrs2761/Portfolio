@@ -88,8 +88,8 @@ const Navbar = () => {
               </button>
             ))}
             <a
-              href="/aswath-resume.pdf"
-              download = "/Aswath_RS_MERN_Developer_Resume.pdf"
+              href="/Aswath_MERN_Developer_resume.pdf"
+              download = "/Aswath_MERN_Developer_resume.pdf"
               className="ml-4 px-6 py-2 bg-accent hover:bg-accent-light text-accent-foreground rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/30"
             >
               Resume
@@ -127,8 +127,8 @@ const Navbar = () => {
               </button>
             ))}
             <a
-              href="/aswath-resume.pdf"
-              download = "Aswath_RS_MERN_Developer_Resume.pdf"
+              href="/Aswath_MERN_Developer_resume.pdf"
+              download = "Aswath_MERN_Developer_resume.pdf"
               className="block w-full text-center mt-4 px-6 py-3 bg-accent hover:bg-accent-light text-accent-foreground rounded-lg transition-all duration-300"
             >
               Download Resume
